@@ -8,8 +8,8 @@ import (
 	"github.com/destrex271/zpo/internal"
 )
 
-func main(){
-	if len(os.Args) < 2{
+func main() {
+	if len(os.Args) < 2 {
 		log.Fatal("Expected subcommand: [list, describe]")
 	}
 
@@ -22,7 +22,7 @@ func main(){
 		}
 
 		err = internal.ListPostgresqlClusters(listArgs.Namespace, false)
-		if err != nil{
+		if err != nil {
 			log.Fatal("Error executing list: ", err.Error())
 		}
 
@@ -32,7 +32,7 @@ func main(){
 			log.Fatal("Error parsing describe args: ", err)
 		}
 		output, err := internal.DescribePostgresqlCluster(describeArgs.Namespace, describeArgs.ClusterName, describeArgs.OutputFile, false)
-		if err != nil{
+		if err != nil {
 			log.Fatal("Error executing describe: ", err.Error())
 		}
 
