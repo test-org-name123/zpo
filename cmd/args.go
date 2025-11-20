@@ -16,7 +16,7 @@ type DescribeArgs struct {
 	OutputFile  string
 }
 
-func GetListArgs(args []string)            (ListArgs, error) {
+func GetListArgs(args []string) (ListArgs, error) {
 	listCmd := flag.NewFlagSet("list", flag.ContinueOnError)
 	namespace := listCmd.String("namespace", "", "Target namespace (optional)")
 	n := listCmd.String("n", "", "Shorthand for --namespace")
