@@ -17,7 +17,7 @@ type DescribeArgs struct {
 }
 
 func GetListArgs(args []string) (ListArgs, error) {
-	listCmd := flag.NewFlagSet("list", flag.ContinueOnError)
+	listCmd := flag.NewFlagSet("list",     flag.ContinueOnError)
 	namespace := listCmd.String("namespace", "", "Target namespace (optional)")
 	n := listCmd.String("n", "", "Shorthand for --namespace")
 	if err := listCmd.Parse(args); err != nil {
