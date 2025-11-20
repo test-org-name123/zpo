@@ -17,10 +17,8 @@ var postgresGVR = schema.GroupVersionResource{
 	Resource: "postgresqls",
 }
 
-
-
 func GetDynamicClient(isTest bool) (dynamic.Interface, error) {
-	if isTest{
+	if isTest {
 		return getDynamicClient_Test()
 	}
 	kubeconfig := os.Getenv("KUBECONFIG")
@@ -82,4 +80,3 @@ func getDynamicClient_Test() (dynamic.Interface, error) {
 	client := fake.NewSimpleDynamicClient(scheme, cluster1, cluster2)
 	return client, nil
 }
-

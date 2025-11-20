@@ -45,7 +45,6 @@ func TestGetListArgs_InvalidFlag(t *testing.T) {
 	}
 }
 
-
 func TestGetDescribeArgs_MissingClusterName(t *testing.T) {
 	args := []string{"--namespace", "dev"}
 	_, err := GetDescribeArgs(args)
