@@ -32,4 +32,3 @@ func TestDescribePostgresqlCluster_NotFound(t *testing.T) {
 		t.Errorf("Expected error for missing cluster, got nil")
 	}
 }
-
