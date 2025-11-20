@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"sigs.k8s.io/yaml"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"sigs.k8s.io/yaml"
 )
 
 func DescribePostgresqlCluster(namespace, name, output string, istest bool) (string, error) {
@@ -37,4 +37,3 @@ func DescribePostgresqlCluster(namespace, name, output string, istest bool) (str
 		return "", fmt.Errorf("unsupported output format: %s", output)
 	}
 }
-
